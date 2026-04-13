@@ -1,0 +1,45 @@
+{
+  "name": "gatewaysources",
+  "description": "A collection of several common gateways: KNX, Modbus, and MQTT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wesxt/GatewaySources.git"
+  },
+  "contributors": [
+    {
+      "name": "Arnold Steven Beleño Zuletta",
+      "email": "lordwesxt@gmail.com"
+    }
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start": "tsc && node dist/index.js",
+    "watch": "tsc -w",
+    "pack:test": "npm pack",
+    "release:patch": "npm version patch && git push --follow-tags",
+    "release:minor": "npm version minor && git push --follow-tags",
+    "release:major": "npm version major && git push --follow-tags"
+  },
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "aedes": "^1.0.2",
+    "aedes-server-factory": "^0.2.1",
+    "knx.ts": "^1.0.21",
+    "modbus-serial": "^8.0.25",
+    "mqtt": "^5.15.1",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "typescript": "^6.0.2"
+  }
+}
