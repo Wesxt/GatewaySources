@@ -3,7 +3,7 @@
   "description": "A collection of several common gateways: KNX, Modbus, and MQTT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Wesxt/GatewaySources.git"
