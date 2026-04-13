@@ -9,8 +9,8 @@ The messages API payloads are exported as `WSClientPayload`, `WSServerPayload`, 
 The `KNXWebSocketGateway` provides a simple, JSON-based bidirectional API over WebSockets, only if you install the dependency or don´t use "--noOptional".
 
 ```typescript
-import { KNXWebSocketGateway } from "knx.ts/server";
-// Or use: import { KNXWebSocketGateway } from 'knx.ts' if exported from root.
+import { KNXWebSocketGateway } from "gatewaysources";
+// Or use: import { KNXWebSocketGateway } from 'gatewaysources' if exported from root.
 
 const wsGateway = new KNXWebSocketGateway({
   port: 8080,
@@ -42,7 +42,7 @@ wsGateway.start();
 The `KNXMQTTGateway` connects to an existing MQTT broker or sets up an embedded one using `aedes`, only if you install the dependency or don´t use "--noOptional".
 
 ```typescript
-import { KNXMQTTGateway } from "knx.ts/server";
+import { KNXMQTTGateway } from "gatewaysources";
 
 const mqttGateway = new KNXMQTTGateway({
   embeddedBroker: { port: 1883 }, // Or use brokerUrl: "mqtt://your-broker:1883"
@@ -80,7 +80,7 @@ The `ModbusGateway` allows bidirectional mapping between Modbus registers (coils
 ### Master Mode Example (Reading RS485 Meter mapped to KNX)
 
 ```typescript
-import { ModbusGateway, Router } from "knx.ts";
+import { ModbusGateway, Router } from "gatewaysources";
 
 const myRouter = new Router();
 // Provide a connection to myRouter...
@@ -115,7 +115,7 @@ await gatewayMaster.start();
 ### Slave Mode Example (Emulating a TCP PLC mapped to MQTT)
 
 ```typescript
-import { ModbusGateway } from "knx.ts";
+import { ModbusGateway } from "gatewaysources";
 
 const gatewaySlave = new ModbusGateway({
   mode: "slave",
